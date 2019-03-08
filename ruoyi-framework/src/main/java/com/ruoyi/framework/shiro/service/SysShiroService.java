@@ -1,6 +1,7 @@
 package com.ruoyi.framework.shiro.service;
 
 import java.io.Serializable;
+
 import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,12 +12,11 @@ import com.ruoyi.system.service.ISysUserOnlineService;
 
 /**
  * 会话db操作处理
- * 
+ *
  * @author ruoyi
  */
 @Component
-public class SysShiroService
-{
+public class SysShiroService {
     @Autowired
     private ISysUserOnlineService onlineService;
 
@@ -25,8 +25,7 @@ public class SysShiroService
      *
      * @param onlineSession 会话信息
      */
-    public void deleteSession(OnlineSession onlineSession)
-    {
+    public void deleteSession(OnlineSession onlineSession) {
         onlineService.deleteOnlineById(String.valueOf(onlineSession.getId()));
     }
 
@@ -36,17 +35,14 @@ public class SysShiroService
      * @param sessionId
      * @return
      */
-    public Session getSession(Serializable sessionId)
-    {
+    public Session getSession(Serializable sessionId) {
         SysUserOnline userOnline = onlineService.selectOnlineById(String.valueOf(sessionId));
         return StringUtils.isNull(userOnline) ? null : createSession(userOnline);
     }
 
-    public Session createSession(SysUserOnline userOnline)
-    {
+    public Session createSession(SysUserOnline userOnline) {
         OnlineSession onlineSession = new OnlineSession();
-        if (StringUtils.isNotNull(userOnline))
-        {
+        if (StringUtils.isNotNull(userOnline)) {
             onlineSession.setId(userOnline.getSessionId());
             onlineSession.setHost(userOnline.getIpaddr());
             onlineSession.setBrowser(userOnline.getBrowser());
