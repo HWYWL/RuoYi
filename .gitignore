@@ -23,3 +23,12 @@
 hs_err_pid*
 .idea/
 ruoyi-admin/target/
+ruoyi-generator/ruoyi-generator.iml
+ruoyi-framework/ruoyi-framework.iml
+ruoyi-common/ruoyi-common.iml
+ruoyi-admin/ruoyi-admin.iml
+ruoyi-generator/target/
+ruoyi-quartz/target/
+ruoyi-system/target/
+ruoyi-quartz/ruoyi-quartz.iml
+ruoyi-system/ruoyi-system.iml
