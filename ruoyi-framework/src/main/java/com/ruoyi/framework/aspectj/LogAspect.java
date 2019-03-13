@@ -34,7 +34,9 @@ import com.ruoyi.system.domain.SysUser;
 public class LogAspect {
     private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
-    // 配置织入点
+    /**
+     * 配置织入点
+     */
     @Pointcut("@annotation(com.ruoyi.common.annotation.Log)")
     public void logPointCut() {
     }
